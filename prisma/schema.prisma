@@ -36,14 +36,17 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String         @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?        @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
+  comments      Comment[]
+  postLikes     PostLikes[]
+  commentLikes  CommentLikes[]
 }
 
 model VerificationToken {
@@ -55,26 +58,80 @@ model VerificationToken {
 }
 
 model Post {
-  id        Int       @id @default(autoincrement())
-  title     String    @db.VarChar(100)
-  content   String    @db.VarChar(255)
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        Int         @id @default(autoincrement())
+  title     String      @db.VarChar(100)
+  content   String      @db.VarChar(255)
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @default(now())
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @default(now())
   comments  Comment[]
-  likes User[]
+  postLikes PostLikes[]
+  tags      Tags[]
+  PostTags  PostTags[]
 }
 
 model Comment {
-  id        Int      @id @default(autoincrement())
-  content   String   @db.VarChar(255)
+  id           Int            @id @default(autoincrement())
+  content      String         @db.VarChar(255)
+  user         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @default(now())
+  post         Post           @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId       Int
+  commentLikes CommentLikes[]
+  tags         Tags[]
+  CommentTags  CommentTags[]
+}
+
+model Tags {
+  id        Int           @id @default(autoincrement())
+  name      String
+  posts     PostTags[]
+  comments  CommentTags[]
+  Post      Post?         @relation(fields: [postId], references: [id])
+  postId    Int?
+  Comment   Comment?      @relation(fields: [commentId], references: [id])
+  commentId Int?
+}
+
+model PostTags {
+  post       Post     @relation(fields: [postId], references: [id])
+  postId     Int
+  tag        Tags     @relation(fields: [tagId], references: [id])
+  tagId      Int
+  assignedAt DateTime @default(now())
+
+  @@id([postId, tagId])
+}
+
+model CommentTags {
+  comment    Comment  @relation(fields: [commentId], references: [id])
+  commentId  Int
+  tag        Tags     @relation(fields: [tagId], references: [id])
+  tagId      Int
+  assignedAt DateTime @default(now())
+
+  @@id([commentId, tagId])
+}
+
+model PostLikes {
+  post    Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId  Int
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId  String
+  likedAt DateTime @default(now())
+
+  @@id([postId, userId])
+}
+
+model CommentLikes {
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId Int
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
-  postId    Int
-    likes User[]
+  likedAt   DateTime @default(now())
 
+  @@id([commentId, userId])
 }
