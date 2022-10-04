@@ -17,7 +17,8 @@
     "next-auth": "^4.12.2",
     "prisma": "^4.4.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "recoil": "^0.7.5"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
