@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       as="footer"
       direction="column"
       bgColor="white"
-      w="28vw"
+      w="36vw"
       h="full"
       overflow="auto"
     ></Flex>
