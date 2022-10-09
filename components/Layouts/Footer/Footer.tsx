@@ -20,13 +20,13 @@ export const Footer: React.FC = () => {
             w="36vw"
             h="full"
             overflow="auto"
-            pt={8}
-            px={{ base: 3, lg: 5 }}
+            pt={'8px'}
+            px={{ base: '3', lg: '5' }}
         >
-            <Flex direction={'column'} w={{ xl: '380px' }} gap={4}>
+            <Flex direction={'column'} w={{ xl: '380px' }} gap={'4'}>
                 <SearchInput />
                 <Flex direction={'column'} bgColor={'gray.100'} rounded={'2xl'}>
-                    <Heading as={'h3'} fontSize={22} p={4}>
+                    <Heading as={'h3'} fontSize={'xl'} p={'4'}>
                         トレンド
                     </Heading>
                     <Wrap direction="column">
@@ -34,16 +34,16 @@ export const Footer: React.FC = () => {
                             <NextLink href={'/'}>
                                 <Link
                                     w={'full'}
-                                    p={4}
+                                    p={'4'}
                                     _hover={{ bgColor: 'gray.200' }}
                                     transition={'all'}
                                     transitionDuration={'0.3s'}
                                     display={'block'}
                                 >
-                                    <Heading as={'h4'} fontSize={18}>
+                                    <Heading as={'h4'} fontSize={'lg'}>
                                         トレンドテスト
                                     </Heading>
-                                    <Text color={'gray.500'} fontSize={14}>
+                                    <Text color={'gray.500'} fontSize={'md'}>
                                         1223件の投稿
                                     </Text>
                                 </Link>
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
                         </WrapItem>
                     </Wrap>
                     <Box
-                        flexGrow={1}
+                        flexGrow={'1'}
                         roundedBottom={'2xl'}
                         _hover={{ bgColor: 'gray.200' }}
                         transition={'all'}

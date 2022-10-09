@@ -21,8 +21,8 @@ export const Header: React.FC = () => {
             h="full"
             direction="column"
             bgColor="white"
-            pt={8}
-            px={{ base: 3, lg: 5 }}
+            pt={'8'}
+            px={{ base: '3', lg: '5' }}
             alignItems={'end'}
         >
             <Flex
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
             >
                 <Box>
                     <Heading as={'h1'} textAlign={'start'}>
-                        <AiFillDingtalkCircle size={40} />
+                        <AiFillDingtalkCircle size={'40'} />
                     </Heading>
                 </Box>
                 <nav>
@@ -44,17 +44,17 @@ export const Header: React.FC = () => {
                                 <a>
                                     <Flex
                                         rounded={'full'}
-                                        py={{ xl: 2 }}
-                                        pl={{ xl: 3 }}
-                                        pr={{ xl: 6 }}
-                                        p={3}
+                                        py={{ xl: '2' }}
+                                        pl={{ xl: '3' }}
+                                        pr={{ xl: '6' }}
+                                        p={'3'}
                                         _hover={{ bgColor: 'gray.100' }}
                                         transition={'all'}
                                         transitionDuration={'0.3s'}
                                         alignItems={'center'}
-                                        gap={4}
+                                        gap={'4'}
                                     >
-                                        <FaHome size={30} />
+                                        <FaHome size={'30'} />
                                         <Text
                                             display={{
                                                 base: 'none',
@@ -72,17 +72,17 @@ export const Header: React.FC = () => {
                                 <a>
                                     <Flex
                                         rounded={'full'}
-                                        py={{ xl: 2 }}
-                                        pl={{ xl: 3 }}
-                                        pr={{ xl: 6 }}
-                                        p={3}
+                                        py={{ xl: '2' }}
+                                        pl={{ xl: '3' }}
+                                        pr={{ xl: '6' }}
+                                        p={'3'}
                                         _hover={{ bgColor: 'gray.100' }}
                                         transition={'all'}
                                         transitionDuration={'0.3s'}
                                         alignItems={'center'}
-                                        gap={4}
+                                        gap={'4'}
                                     >
-                                        <FaSlackHash size={30} />
+                                        <FaSlackHash size={'30'} />
                                         <Text
                                             display={{
                                                 base: 'none',
@@ -100,17 +100,17 @@ export const Header: React.FC = () => {
                                 <a>
                                     <Flex
                                         rounded={'full'}
-                                        py={{ xl: 2 }}
-                                        pl={{ xl: 3 }}
-                                        pr={{ xl: 6 }}
-                                        p={3}
+                                        py={{ xl: '2' }}
+                                        pl={{ xl: '3' }}
+                                        pr={{ xl: '6' }}
+                                        p={'3'}
                                         _hover={{ bgColor: 'gray.100' }}
                                         transition={'all'}
                                         transitionDuration={'0.3s'}
                                         alignItems={'center'}
-                                        gap={4}
+                                        gap={'4'}
                                     >
-                                        <FaBell size={30} />
+                                        <FaBell size={'30'} />
                                         <Text
                                             display={{
                                                 base: 'none',
@@ -128,17 +128,17 @@ export const Header: React.FC = () => {
                                 <a>
                                     <Flex
                                         rounded={'full'}
-                                        py={{ xl: 2 }}
-                                        pl={{ xl: 3 }}
-                                        pr={{ xl: 6 }}
-                                        p={3}
+                                        py={{ xl: '2' }}
+                                        pl={{ xl: '3' }}
+                                        pr={{ xl: '6' }}
+                                        p={'3'}
                                         _hover={{ bgColor: 'gray.100' }}
                                         transition={'all'}
                                         transitionDuration={'0.3s'}
                                         alignItems={'center'}
-                                        gap={4}
+                                        gap={'4'}
                                     >
-                                        <MdAccountCircle size={30} />
+                                        <MdAccountCircle size={'30'} />
                                         <Text
                                             display={{
                                                 base: 'none',
@@ -156,17 +156,17 @@ export const Header: React.FC = () => {
                                 <a>
                                     <Flex
                                         rounded={'full'}
-                                        py={{ xl: 2 }}
-                                        pl={{ xl: 3 }}
-                                        pr={{ xl: 6 }}
-                                        p={3}
+                                        py={{ xl: '2' }}
+                                        pl={{ xl: '3' }}
+                                        pr={{ xl: '6' }}
+                                        p={'3'}
                                         _hover={{ bgColor: 'gray.100' }}
                                         transition={'all'}
                                         transitionDuration={'0.3s'}
                                         alignItems={'center'}
-                                        gap={4}
+                                        gap={'4'}
                                     >
-                                        <MdSettings size={30} />
+                                        <MdSettings size={'30'} />
                                         <Text
                                             display={{
                                                 base: 'none',
@@ -198,7 +198,7 @@ export const Header: React.FC = () => {
                         cursor={'pointer'}
                         textAlign={'center'}
                     >
-                        <BsFillPlusCircleFill size={45} />
+                        <BsFillPlusCircleFill size={'45'} />
                     </Box>
                 </Box>
             </Flex>
