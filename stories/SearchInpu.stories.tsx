@@ -20,5 +20,7 @@ export const Normal = Template.bind({})
 
 Normal.args = {
     value: 'a',
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => {},
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.value)
+    },
 }
