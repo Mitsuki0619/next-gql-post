@@ -7,7 +7,9 @@ import { Layout } from "@/components/Layouts/Layout";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Box></Box>
+      <Box flexGrow={1}>
+        <Flex as={"main"}></Flex>
+      </Box>
     </Layout>
   );
 };

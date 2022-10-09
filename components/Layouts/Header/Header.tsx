@@ -7,7 +7,7 @@ import {
   WrapItem,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
 import React from "react";
 import { AiFillDingtalkCircle } from "react-icons/ai";
 import { BsFillPlusCircleFill } from "react-icons/bs";
@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
       direction="column"
       bgColor="white"
       pt={8}
-      pr={{ base: 3, lg: 5 }}
+      px={{ base: 3, lg: 5 }}
       alignItems={"end"}
     >
       <Flex
@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
         <nav>
           <Wrap direction="column" spacing={"4vh"} fontSize={"xl"}>
             <WrapItem>
-              <Link href="">
+              <NextLink href="">
                 <a>
                   <Flex
                     rounded={"full"}
@@ -58,10 +58,10 @@ export const Header: React.FC = () => {
                     <Text display={{ base: "none", xl: "block" }}>ホーム</Text>
                   </Flex>
                 </a>
-              </Link>
+              </NextLink>
             </WrapItem>
             <WrapItem>
-              <Link href="">
+              <NextLink href="">
                 <a>
                   <Flex
                     rounded={"full"}
@@ -81,10 +81,10 @@ export const Header: React.FC = () => {
                     </Text>
                   </Flex>
                 </a>
-              </Link>
+              </NextLink>
             </WrapItem>
             <WrapItem>
-              <Link href="">
+              <NextLink href="">
                 <a>
                   <Flex
                     rounded={"full"}
@@ -102,10 +102,10 @@ export const Header: React.FC = () => {
                     <Text display={{ base: "none", xl: "block" }}>通知</Text>
                   </Flex>
                 </a>
-              </Link>
+              </NextLink>
             </WrapItem>
             <WrapItem>
-              <Link href="">
+              <NextLink href="">
                 <a>
                   <Flex
                     rounded={"full"}
@@ -125,10 +125,10 @@ export const Header: React.FC = () => {
                     </Text>
                   </Flex>
                 </a>
-              </Link>
+              </NextLink>
             </WrapItem>
             <WrapItem>
-              <Link href="">
+              <NextLink href="">
                 <a>
                   <Flex
                     rounded={"full"}
@@ -146,7 +146,7 @@ export const Header: React.FC = () => {
                     <Text display={{ base: "none", xl: "block" }}>設定</Text>
                   </Flex>
                 </a>
-              </Link>
+              </NextLink>
             </WrapItem>
           </Wrap>
         </nav>
