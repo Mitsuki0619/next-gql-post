@@ -21,8 +21,7 @@ model Account {
   scope             String?
   id_token          String? @db.Text
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -43,10 +42,14 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  profile       Profile?
   posts         Post[]
   comments      Comment[]
   postLikes     PostLikes[]
   commentLikes  CommentLikes[]
+  messages      Message[]
+  messageRooms  MessageRoom[]
+  Notifications Notification[]
 }
 
 model VerificationToken {
@@ -55,6 +58,16 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Profile {
+  displayName  String
+  introduction String
+  iconImage    String
+  bannerImage  String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId       String   @unique
+  updatedAt    DateTime @default(now())
 }
 
 model Post {
@@ -134,4 +147,31 @@ model CommentLikes {
   likedAt   DateTime @default(now())
 
   @@id([commentId, userId])
+}
+
+model Message {
+  id        Int         @id @default(autoincrement())
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  room      MessageRoom @relation(fields: [roomId], references: [id])
+  roomId    Int
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @default(now())
+}
+
+model MessageRoom {
+  id        Int       @id @default(autoincrement())
+  users     User[]
+  messages  Message[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @default(now())
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  User      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String?
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
