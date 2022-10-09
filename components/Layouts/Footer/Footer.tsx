@@ -17,13 +17,19 @@ export const Footer: React.FC = () => {
             as="footer"
             direction="column"
             bgColor="white"
-            w="36vw"
+            w={{ base: '0', sm: '36vw' }}
             h="full"
             overflow="auto"
             pt={'8px'}
             px={{ base: '3', lg: '5' }}
+            display={{ base: 'none', sm: 'flex' }}
         >
-            <Flex direction={'column'} w={{ xl: '380px' }} gap={'4'}>
+            <Flex
+                direction={'column'}
+                w={{ xl: '380px' }}
+                gap={'4'}
+                display={{ base: 'none', lg: 'flex' }}
+            >
                 <SearchInput />
                 <Flex direction={'column'} bgColor={'gray.100'} rounded={'2xl'}>
                     <Heading as={'h3'} fontSize={'xl'} p={'4'}>
@@ -57,7 +63,7 @@ export const Footer: React.FC = () => {
                         transition={'all'}
                         transitionDuration={'0.3s'}
                     >
-                        <NextLink href={'/trend'}>
+                        <NextLink href={''}>
                             <Link
                                 w={'full'}
                                 h={'full'}

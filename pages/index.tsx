@@ -1,25 +1,24 @@
-import { Box, Flex, Heading } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { Layout } from '@/components/Layouts/Layout'
+import { PageTitle } from '@/components/PageTitle/PageTitle'
 import { PostForm } from '@/components/PostForm/PostForm'
+import { PostList } from '@/components/PostList/PostList'
 
 const Home: NextPage = () => {
     return (
         <Layout>
-            <Box flexGrow={1}>
-                <Flex as={'main'} direction={'column'}>
-                    <Flex
-                        px={4}
-                        position={'sticky'}
-                        top={0}
-                        alignItems={'center'}
-                        h={14}
-                    >
-                        <Heading as={'h2'} fontSize={'24px'}>
-                            ホーム
-                        </Heading>
-                    </Flex>
+            <Box>
+                <Flex
+                    as={'main'}
+                    direction={'column'}
+                    overflow={'auto'}
+                    h={'full'}
+                    gap={'3'}
+                >
+                    <PageTitle title="ホーム" />
                     <PostForm />
+                    <PostList />
                 </Flex>
             </Box>
         </Layout>
