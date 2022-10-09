@@ -9,10 +9,10 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import { AiFillDingtalkCircle } from "react-icons/ai";
+import { BsFillPlusCircleFill } from "react-icons/bs";
 import { FaBell, FaHome, FaSlackHash } from "react-icons/fa";
 import { MdAccountCircle, MdSettings } from "react-icons/md";
-import { BsFillPlusCircleFill } from "react-icons/bs";
-import { AiFillDingtalkCircle } from "react-icons/ai";
 
 export const Header: React.FC = () => {
   return (
@@ -21,8 +21,8 @@ export const Header: React.FC = () => {
       h="full"
       direction="column"
       bgColor="white"
-      py={8}
-      px={{ base: 3, lg: 8 }}
+      pt={8}
+      pr={{ base: 3, lg: 5 }}
       alignItems={"end"}
     >
       <Flex
