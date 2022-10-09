@@ -2,7 +2,14 @@ import { InputGroup, InputLeftElement, Input } from '@chakra-ui/react'
 import React from 'react'
 import { BiSearch } from 'react-icons/bi'
 
-export const SearchInput = () => {
+export interface SearchInputProps {
+    value: string
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+export const SearchInput: React.FC<SearchInputProps> = ({
+    value,
+    onChange,
+}) => {
     return (
         <InputGroup>
             <InputLeftElement
@@ -23,6 +30,8 @@ export const SearchInput = () => {
                 placeholder={'キーワード検索'}
                 focusBorderColor={'teal.500'}
                 h={'12'}
+                value={value}
+                onChange={onChange}
             />
         </InputGroup>
     )
