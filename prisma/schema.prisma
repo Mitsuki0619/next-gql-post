@@ -80,7 +80,7 @@ model Post {
   updatedAt DateTime    @default(now())
   comments  Comment[]
   postLikes PostLikes[]
-  tags      Tags[]
+  tags      Tag[]
   PostTags  PostTags[]
 }
 
@@ -94,11 +94,11 @@ model Comment {
   post         Post           @relation(fields: [postId], references: [id], onDelete: Cascade)
   postId       Int
   commentLikes CommentLikes[]
-  tags         Tags[]
+  tags         Tag[]
   CommentTags  CommentTags[]
 }
 
-model Tags {
+model Tag {
   id        Int           @id @default(autoincrement())
   name      String
   posts     PostTags[]
@@ -112,7 +112,7 @@ model Tags {
 model PostTags {
   post       Post     @relation(fields: [postId], references: [id])
   postId     Int
-  tag        Tags     @relation(fields: [tagId], references: [id])
+  tag        Tag     @relation(fields: [tagId], references: [id])
   tagId      Int
   assignedAt DateTime @default(now())
 
@@ -122,7 +122,7 @@ model PostTags {
 model CommentTags {
   comment    Comment  @relation(fields: [commentId], references: [id])
   commentId  Int
-  tag        Tags     @relation(fields: [tagId], references: [id])
+  tag        Tag     @relation(fields: [tagId], references: [id])
   tagId      Int
   assignedAt DateTime @default(now())
 
