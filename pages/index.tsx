@@ -8,12 +8,13 @@ import { PostList } from '@/components/PostList/PostList'
 const Home: NextPage = () => {
     return (
         <Layout>
-            <Box>
+            <Box w={'full'}>
                 <Flex
                     as={'main'}
                     direction={'column'}
                     overflow={'auto'}
                     h={'full'}
+                    w={'full'}
                     gap={'3'}
                 >
                     <PageTitle title="ホーム" />

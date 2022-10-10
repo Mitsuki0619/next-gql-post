@@ -9,7 +9,12 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
     return (
         <Flex w="100vw" h="100vh" bgColor="gray.100">
             <Header />
-            <Flex as="main" grow={1} minW={{ base: 'xsm', md: '2xl' }} maxW={'2xl'}>
+            <Flex
+                as="main"
+                grow={1}
+                minW={{ base: 'xsm', md: 'xl', xl: '2xl' }}
+                maxW={'2xl'}
+            >
                 {children}
             </Flex>
             <Footer />

@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
     return (
         <Box flexGrow={1}>
             <Flex
-                minW={'70'}
+                minW={{base: '70', xl: '350'}}
                 h="full"
                 direction="column"
                 bgColor="white"

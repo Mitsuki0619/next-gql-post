@@ -11,31 +11,6 @@ export const PostList: React.FC = () => {
                     <PostItem />
                 </NextLink>
             </ListItem>
-            <ListItem>
-                <NextLink href="/">
-                    <PostItem />
-                </NextLink>
-            </ListItem>
-            <ListItem>
-                <NextLink href="/">
-                    <PostItem />
-                </NextLink>
-            </ListItem>
-            <ListItem>
-                <NextLink href="/">
-                    <PostItem />
-                </NextLink>
-            </ListItem>
-            <ListItem>
-                <NextLink href="/">
-                    <PostItem />
-                </NextLink>
-            </ListItem>
-            <ListItem>
-                <NextLink href="/">
-                    <PostItem />
-                </NextLink>
-            </ListItem>
         </List>
     )
 }
