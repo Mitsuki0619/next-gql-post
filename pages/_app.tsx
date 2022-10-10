@@ -1,9 +1,7 @@
-// pages/_app.js
 import { ChakraProvider } from '@chakra-ui/react'
-
-// 1. Import the extendTheme function
 import { extendTheme } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
+import { RecoilRoot } from 'recoil'
 
 const theme = extendTheme({
     fonts: {
@@ -14,9 +12,11 @@ const theme = extendTheme({
 
 function App({ Component, pageProps }: AppProps) {
     return (
-        <ChakraProvider theme={theme}>
-            <Component {...pageProps} />
-        </ChakraProvider>
+        <RecoilRoot>
+            <ChakraProvider theme={theme}>
+                <Component {...pageProps} />
+            </ChakraProvider>
+        </RecoilRoot>
     )
 }
 

@@ -1,5 +1,4 @@
 import {
-    Icon,
     Menu,
     MenuButton,
     MenuItem,
