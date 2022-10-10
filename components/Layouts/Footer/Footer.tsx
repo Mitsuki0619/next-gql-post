@@ -30,7 +30,12 @@ export const Footer: React.FC = () => {
                 gap={'4'}
                 display={{ base: 'none', lg: 'flex' }}
             >
-                <SearchInput />
+                <SearchInput
+                    value={''}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                        console.log(e.target.value)
+                    }}
+                />
                 <Flex direction={'column'} bgColor={'gray.100'} rounded={'2xl'}>
                     <Heading as={'h3'} fontSize={'xl'} p={'4'}>
                         トレンド

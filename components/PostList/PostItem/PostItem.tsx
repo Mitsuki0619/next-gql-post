@@ -1,9 +1,9 @@
-import { PostMenu } from '@/components/PostMenu/PostMenu'
 import { Avatar, Box, Flex, IconButton, Link, Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import React from 'react'
 import { FaRegCommentDots } from 'react-icons/fa'
 import { MdFavoriteBorder, MdIosShare } from 'react-icons/md'
+import { PostMenu } from '@/components/PostMenu/PostMenu'
 
 export const PostItem = React.forwardRef(function PostItem(props, ref) {
     return (
