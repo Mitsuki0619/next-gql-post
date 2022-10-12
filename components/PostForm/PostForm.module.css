@@ -1,0 +1,10 @@
+.inputImage {
+    display: none;
+}
+.inputImageLabel {
+    display: inline;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+    padding: 0 10px;
+}
